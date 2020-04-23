@@ -4,7 +4,6 @@ let columns;
 let userChoice = prompt("Welcome to Tic Tac Toe! Who will emerge victorious? You must choose: X or O?")
 let compChoice = ""
 
-// Get user input
 
 //userChoice validation
 
@@ -56,7 +55,7 @@ function pickSquare(){
 	let squareToPick = grid[Math.floor(Math.random()*9)];
 	
 	if(squareToPick == ""){
-		squareToPick.innerText += `${compChoice}`;
+		squareToPick.innerText = `${compChoice}`;
 	} else if(squareToPick !== ""){
 		squareToPick = grid[Math.floor(Math.random()*9)];
 	}
