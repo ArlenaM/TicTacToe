@@ -4,18 +4,30 @@
 	width:100px;
 	background-color: white;
   	position:absolute;
+  	
+}
+
+#box0{
+	border-left-style: none;
+	border-top-style: none;
 }
 
 #box1{
 	margin-left: 100px;
+	font-color:red;
+	border-top-style: none;
+	
 }
 
 #box2{
 	margin-left: 200px;
+	border-top-style: none;
+	border-right-style: none;
 }
 
 #box3{
 	margin-top: 100px;
+	border-left-style: none;
 }
 
 #box4{
@@ -26,28 +38,36 @@
 #box5{
 	margin-left: 200px;
 	margin-top: 100px;
+	border-right-style: none;
 }
 
 #box6{
 	margin-top: 200px;
+	border-left-style: none;
+	border-bottom-style: none;
 }
 
 #box7{
 	margin-left: 100px;
 	margin-top: 200px;
+	border-bottom-style: none;
 }
 
 #box8{
 	margin-left: 200px;
 	margin-top: 200px;
+	border-bottom-style: none;
+	border-right-style: none;
 }
 
 .box:hover{
 	background-color: #add8e6;
 }
 
-div innerText{
-	color:red;
+div{
+	color:black;
+	text-align:center;
+	font-size:75px;
 }
 
 

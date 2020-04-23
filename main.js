@@ -2,6 +2,7 @@ let grid = [];
 let rows;
 let columns;
 let userChoice = prompt("Welcome to Tic Tac Toe! Who will emerge victorious? You must choose: X or O?")
+let compChoice = ""
 
 // Get user input
 
@@ -38,9 +39,8 @@ function displayUserChoice(e){
 }
 
 
-// Generate computer output --, generate a square to pick, check to see if square is already filled
+// Generate computer output -- generate a square to pick, check to see if square is already filled
 function generateCompChoice(){
-	let compChoice = ""
 
 	if (userChoice === "X"){
 		compChoice = "O";
@@ -50,10 +50,21 @@ function generateCompChoice(){
 	return compChoice;
 }
 
+// can store user choice
 function pickSquare(){
 
-	let squareToPick = box.Math.floor(Math.random()*9)
-	squareToPick.innerText = `{$compChoice}`; 
+	let squareToPick = grid[Math.floor(Math.random()*9)];
+	
+	if(squareToPick == ""){
+		squareToPick.innerText += `${compChoice}`;
+	} else if(squareToPick !== ""){
+		squareToPick = grid[Math.floor(Math.random()*9)];
+	}
+
+
+	return squareToPick;
+
+
 }
 
 
