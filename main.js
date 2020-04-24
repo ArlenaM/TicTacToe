@@ -5,7 +5,8 @@ let userChoice = prompt("Welcome to Tic Tac Toe! Who will emerge victorious? You
 let compChoice = ""
 
 
-//userChoice validation
+
+//TODO: userChoice validation
 
 
 // Make individual box and add event listener to each one
@@ -19,7 +20,6 @@ function makeBox(){
 		for (let i = 0; i < grid.length; i++){
 			grid[i].id ="box"+ i;
 			grid[i].addEventListener("click", displayUserChoice);
-
 	}
 }
 
@@ -34,7 +34,6 @@ function makeGrid(rows,columns){
 //function to handle user input -- make user input pretty!
 function displayUserChoice(e){
 	e.target.innerText = `${userChoice}`;
-
 }
 
 
@@ -53,21 +52,15 @@ function generateCompChoice(){
 function pickSquare(){
 
 	let squareToPick = grid[Math.floor(Math.random()*9)];
-	
-	if(squareToPick == ""){
-		squareToPick.innerText = `${compChoice}`;
-	} else if(squareToPick !== ""){
-		squareToPick = grid[Math.floor(Math.random()*9)];
+	let pickedSquare = squareToPick.innerText;
+
+	if (pickedSquare == ""){
+		squareToPick.innerText = `${compChoice}`
+	} else if (pickedSquare != ""){
+		return squareToPick;
 	}
-
-
-	return squareToPick;
-
-
+	return pickedSquare;
 }
-
-
-
 
 // Did someone win function --
 // let didIWin = function(){
@@ -76,6 +69,7 @@ function pickSquare(){
 
 makeGrid(3,3);
 generateCompChoice();
+pickSquare();
 
 
 
