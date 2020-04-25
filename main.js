@@ -7,7 +7,7 @@ let compChoice = ""
 //TODO: userChoice validation
 
 
-// Make individual box and add event listener to each one
+// Make individual boxes and add event listener to each one
 function makeBox(){
 		let box = document.createElement("div");
 
@@ -21,7 +21,7 @@ function makeBox(){
 	}
 }
 
-//make function to generate boxes
+//generates grid
 function makeGrid(rows,columns){
 	for(let i = 0; i < rows; i++){
 		for(let j = 0; i < (rows*columns); i++)
@@ -29,14 +29,14 @@ function makeGrid(rows,columns){
 	}
 }
 
-//function to handle user input -- make user input pretty!
+//function to handle user input 
 function displayUserChoice(e){
 	e.target.innerText = `${userChoice}`;
 	pickSquare();
 	didIWin();
 }
 
-// Generate computer output -- generate a square to pick, check to see if square is already filled
+// Generates computer choice of X or O 
 function generateCompChoice(){
 
 	if (userChoice === "X" || userChoice === "x"){
@@ -47,7 +47,7 @@ function generateCompChoice(){
 	return compChoice;
 }
 
-// can store user choice
+// generates a square to pick, checks to see if square is already filled
 function pickSquare(){
 
 	let squareToPick = grid[Math.floor(Math.random()*9)];
@@ -60,7 +60,6 @@ function pickSquare(){
 	}
 	return pickedSquare;
 }
-
 
 let didIWin = function(){
 	if (
@@ -83,11 +82,9 @@ let didIWin = function(){
 	}
 }
 
-
 let playGame = function(){
 	makeGrid(3,3);
 	generateCompChoice();
 }
-
 
 playGame();
