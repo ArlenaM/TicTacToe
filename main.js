@@ -4,8 +4,6 @@ let columns;
 let userChoice = prompt("Welcome to Tic Tac Toe! Who will emerge victorious? You must choose: X or O?")
 let compChoice = ""
 
-
-
 //TODO: userChoice validation
 
 
@@ -34,15 +32,16 @@ function makeGrid(rows,columns){
 //function to handle user input -- make user input pretty!
 function displayUserChoice(e){
 	e.target.innerText = `${userChoice}`;
+	pickSquare();
+	didIWin();
 }
-
 
 // Generate computer output -- generate a square to pick, check to see if square is already filled
 function generateCompChoice(){
 
-	if (userChoice === "X"){
+	if (userChoice === "X" || userChoice === "x"){
 		compChoice = "O";
-	} else if (userChoice === "O"){
+	} else if (userChoice === "O" || userChoice === "o"){
 		compChoice = "X"
 	}
 	return compChoice;
@@ -57,19 +56,38 @@ function pickSquare(){
 	if (pickedSquare == ""){
 		squareToPick.innerText = `${compChoice}`
 	} else if (pickedSquare != ""){
-		return squareToPick;
+		return squareToPick
 	}
 	return pickedSquare;
 }
 
-// Did someone win function --
-// let didIWin = function(){
-// 	if ()
-// }
 
-makeGrid(3,3);
-generateCompChoice();
-pickSquare();
+let didIWin = function(){
+	if (
+		(grid[0].innerText == `${userChoice}`)&&(grid[3].innerText== `${userChoice}`)&&(grid[6].innerText== `${userChoice}`) ||
+		(grid[1].innerText == `${userChoice}`)&&(grid[4].innerText== `${userChoice}`)&&(grid[7].innerText== `${userChoice}`) ||
+		(grid[2].innerText == `${userChoice}`)&&(grid[5].innerText== `${userChoice}`)&&(grid[8].innerText== `${userChoice}`) ||
+		(grid[0].innerText == `${userChoice}`)&&(grid[4].innerText== `${userChoice}`)&&(grid[8].innerText== `${userChoice}`) ||
+		(grid[2].innerText == `${userChoice}`)&&(grid[4].innerText== `${userChoice}`)&&(grid[6].innerText== `${userChoice}`)
+		)
+		{
+		return console.log("You won the game!")
+	} else if (
+		(grid[0].innerText == `${compChoice}`)&&(grid[3].innerText== `${compChoice}`)&&(grid[6].innerText== `${compChoice}`) ||
+		(grid[1].innerText == `${compChoice}`)&&(grid[4].innerText== `${compChoice}`)&&(grid[7].innerText== `${compChoice}`) ||
+		(grid[2].innerText == `${compChoice}`)&&(grid[5].innerText== `${compChoice}`)&&(grid[8].innerText== `${compChoice}`) ||
+		(grid[0].innerText == `${compChoice}`)&&(grid[4].innerText== `${compChoice}`)&&(grid[8].innerText== `${compChoice}`) ||
+		(grid[2].innerText == `${compChoice}`)&&(grid[4].innerText== `${compChoice}`)&&(grid[6].innerText== `${compChoice}`)
+		){
+		return console.log("The computer won. You lost the game. :(")
+	}
+}
 
 
+let playGame = function(){
+	makeGrid(3,3);
+	generateCompChoice();
+}
 
+
+playGame();
