@@ -55,10 +55,9 @@ function pickSquare(){
 
 	if (pickedSquare == ""){
 		squareToPick.innerText = `${compChoice}`
-	} else if (pickedSquare != ""){
-		return squareToPick
-	}
-	return pickedSquare;
+	} else { 
+		pickSquare();
+		}
 }
 
 let didIWin = function(){
@@ -67,7 +66,10 @@ let didIWin = function(){
 		(grid[1].innerText == `${userChoice}`)&&(grid[4].innerText== `${userChoice}`)&&(grid[7].innerText== `${userChoice}`) ||
 		(grid[2].innerText == `${userChoice}`)&&(grid[5].innerText== `${userChoice}`)&&(grid[8].innerText== `${userChoice}`) ||
 		(grid[0].innerText == `${userChoice}`)&&(grid[4].innerText== `${userChoice}`)&&(grid[8].innerText== `${userChoice}`) ||
-		(grid[2].innerText == `${userChoice}`)&&(grid[4].innerText== `${userChoice}`)&&(grid[6].innerText== `${userChoice}`)
+		(grid[2].innerText == `${userChoice}`)&&(grid[4].innerText== `${userChoice}`)&&(grid[6].innerText== `${userChoice}`) ||
+		(grid[0].innerText == `${userChoice}`)&&(grid[1].innerText== `${userChoice}`)&&(grid[2].innerText== `${userChoice}`) ||
+		(grid[3].innerText == `${userChoice}`)&&(grid[4].innerText== `${userChoice}`)&&(grid[5].innerText== `${userChoice}`) ||
+		(grid[6].innerText == `${userChoice}`)&&(grid[7].innerText== `${userChoice}`)&&(grid[8].innerText== `${userChoice}`)
 		)
 		{
 		return console.log("You won the game!")
@@ -76,8 +78,12 @@ let didIWin = function(){
 		(grid[1].innerText == `${compChoice}`)&&(grid[4].innerText== `${compChoice}`)&&(grid[7].innerText== `${compChoice}`) ||
 		(grid[2].innerText == `${compChoice}`)&&(grid[5].innerText== `${compChoice}`)&&(grid[8].innerText== `${compChoice}`) ||
 		(grid[0].innerText == `${compChoice}`)&&(grid[4].innerText== `${compChoice}`)&&(grid[8].innerText== `${compChoice}`) ||
-		(grid[2].innerText == `${compChoice}`)&&(grid[4].innerText== `${compChoice}`)&&(grid[6].innerText== `${compChoice}`)
-		){
+		(grid[2].innerText == `${compChoice}`)&&(grid[4].innerText== `${compChoice}`)&&(grid[6].innerText== `${compChoice}`) ||
+		(grid[0].innerText == `${compChoice}`)&&(grid[1].innerText== `${compChoice}`)&&(grid[2].innerText== `${compChoice}`) ||
+		(grid[3].innerText == `${compChoice}`)&&(grid[4].innerText== `${compChoice}`)&&(grid[5].innerText== `${compChoice}`) ||
+		(grid[6].innerText == `${compChoice}`)&&(grid[7].innerText== `${compChoice}`)&&(grid[8].innerText== `${compChoice}`) 
+		)
+		{
 		return console.log("The computer won. You lost the game. :(")
 	}
 }
