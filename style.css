@@ -1,7 +1,7 @@
 .box {
 	border: 1px solid black;
-	height:100px;
-	width:100px;
+	height:150px;
+	width:150px;
 	background-color: white;
   	position:absolute;
   	
@@ -13,49 +13,47 @@
 }
 
 #box1{
-	margin-left: 100px;
-	font-color:red;
-	border-top-style: none;
-	
+	margin-left: 150px;
+	border-top-style: none;	
 }
 
 #box2{
-	margin-left: 200px;
+	margin-left: 300px;
 	border-top-style: none;
 	border-right-style: none;
 }
 
 #box3{
-	margin-top: 100px;
+	margin-top: 150px;
 	border-left-style: none;
 }
 
 #box4{
-	margin-left: 100px;
-	margin-top: 100px;
+	margin-left: 150px;
+	margin-top: 150px;
 }
 
 #box5{
-	margin-left: 200px;
-	margin-top: 100px;
+	margin-left: 300px;
+	margin-top: 150px;
 	border-right-style: none;
 }
 
 #box6{
-	margin-top: 200px;
+	margin-top: 300px;
 	border-left-style: none;
 	border-bottom-style: none;
 }
 
 #box7{
-	margin-left: 100px;
-	margin-top: 200px;
+	margin-left: 150px;
+	margin-top: 300px;
 	border-bottom-style: none;
 }
 
 #box8{
-	margin-left: 200px;
-	margin-top: 200px;
+	margin-left: 300px;
+	margin-top: 300px;
 	border-bottom-style: none;
 	border-right-style: none;
 }
@@ -67,7 +65,7 @@
 div{
 	color:black;
 	text-align:center;
-	font-size:75px;
+	font-size:100px;
 }
 
 

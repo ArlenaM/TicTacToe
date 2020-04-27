@@ -5,6 +5,9 @@ let userChoice = prompt("Welcome to Tic Tac Toe! Who will emerge victorious? You
 let compChoice = ""
 
 //TODO: userChoice validation
+//TODO: write use case for a tie
+//TODO: Stop computer from choosing new square if user wins
+//TODO: Create hard mode
 
 
 // Make individual boxes and add event listener to each one
@@ -72,7 +75,7 @@ let didIWin = function(){
 		(grid[6].innerText == `${userChoice}`)&&(grid[7].innerText== `${userChoice}`)&&(grid[8].innerText== `${userChoice}`)
 		)
 		{
-		return console.log("You won the game!")
+		return alert("You won the game!")
 	} else if (
 		(grid[0].innerText == `${compChoice}`)&&(grid[3].innerText== `${compChoice}`)&&(grid[6].innerText== `${compChoice}`) ||
 		(grid[1].innerText == `${compChoice}`)&&(grid[4].innerText== `${compChoice}`)&&(grid[7].innerText== `${compChoice}`) ||
@@ -84,8 +87,9 @@ let didIWin = function(){
 		(grid[6].innerText == `${compChoice}`)&&(grid[7].innerText== `${compChoice}`)&&(grid[8].innerText== `${compChoice}`) 
 		)
 		{
-		return console.log("The computer won. You lost the game. :(")
+		return alert("The computer won. You lost the game. :(")
 	}
+
 }
 
 let playGame = function(){
