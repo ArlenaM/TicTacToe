@@ -5,10 +5,10 @@ let userChoice = prompt("Welcome to Tic Tac Toe! Who will emerge victorious? You
 let compChoice = ""
 
 //TODO: userChoice validation
-//TODO: write use case for a tie
+//TODO: write use case for a tie --> keep totalCount
 //TODO: Stop computer from choosing new square if user wins
 //TODO: Create hard mode
-
+//note: user always goes first
 
 // Make individual boxes and add event listener to each one
 function makeBox(){
@@ -37,6 +37,8 @@ function displayUserChoice(e){
 	e.target.innerText = `${userChoice}`;
 	pickSquare();
 	didIWin();
+
+//should either start the game again or end it
 }
 
 // Generates computer choice of X or O 
@@ -89,7 +91,6 @@ let didIWin = function(){
 		{
 		return alert("The computer won. You lost the game. :(")
 	}
-
 }
 
 let playGame = function(){
