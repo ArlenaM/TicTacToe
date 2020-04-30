@@ -3,12 +3,13 @@ let rows;
 let columns;
 let userChoice = prompt("Welcome to Tic Tac Toe! Who will emerge victorious? You must choose: X or O?")
 let compChoice = ""
+let didSomeoneWin = false;
 
 //TODO: userChoice validation
 //TODO: write use case for a tie --> keep totalCount
 //TODO: Stop computer from choosing new square if user wins
 //TODO: Create hard mode
-//note: user always goes first
+//note: currently user always goes first
 
 // Make individual boxes and add event listener to each one
 function makeBox(){
@@ -77,6 +78,7 @@ let didIWin = function(){
 		(grid[6].innerText == `${userChoice}`)&&(grid[7].innerText== `${userChoice}`)&&(grid[8].innerText== `${userChoice}`)
 		)
 		{
+		didSomeoneWin = true;
 		return alert("You won the game!")
 	} else if (
 		(grid[0].innerText == `${compChoice}`)&&(grid[3].innerText== `${compChoice}`)&&(grid[6].innerText== `${compChoice}`) ||
@@ -89,8 +91,9 @@ let didIWin = function(){
 		(grid[6].innerText == `${compChoice}`)&&(grid[7].innerText== `${compChoice}`)&&(grid[8].innerText== `${compChoice}`) 
 		)
 		{
+		didSomeoneWin = true;
 		return alert("The computer won. You lost the game. :(")
-	}
+			}
 }
 
 let playGame = function(){
