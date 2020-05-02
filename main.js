@@ -13,9 +13,10 @@ let didSomeoneWin = false;
 
 // Make individual boxes and add event listener to each one
 function makeBox(){
+		let boxContainer = document.getElementById("boxContainer");
 		let box = document.createElement("div");
 
-		document.body.appendChild(box);
+		boxContainer.appendChild(box);
 		box.classList.add("box");
 		grid.push(box);
 
