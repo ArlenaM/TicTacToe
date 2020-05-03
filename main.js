@@ -37,6 +37,7 @@ function makeGrid(rows,columns){
 //function to handle user input 
 function displayUserChoice(e){
 	e.target.innerText = `${userChoice}`;
+	e.target.style.color="#22223B";
 	pickSquare();
 	didIWin();
 
@@ -62,6 +63,7 @@ function pickSquare(){
 
 	if (pickedSquare == ""){
 		squareToPick.innerText = `${compChoice}`
+		squareToPick.style.color="#22223B"
 	} else { 
 		pickSquare();
 		}

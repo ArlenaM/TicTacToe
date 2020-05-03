@@ -15,6 +15,8 @@ h1{
 	margin-bottom: 50px;
 	font-size:90px;
 	color:#784F41;
+	font-family: sans-serif;
+	text-shadow: 3px 2px #986C6A;
 }
 
 #box0{
@@ -81,10 +83,10 @@ div{
 #boxContainer{
 	margin:auto;
 	width:35%;
-	padding: 10px;
 }
 
 .column{
 	color:red;\
 	width:10%;
+	float:left;
 }
